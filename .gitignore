@@ -4,3 +4,6 @@ Session.vim
 # ignore haskell build files
 *.o
 *.hi
+
+# binaries
+haskell/ub0/max3
