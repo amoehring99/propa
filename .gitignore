@@ -1,0 +1,6 @@
+# ignore editor files
+Session.vim
+
+# ignore haskell build files
+*.o
+*.hi
