@@ -1,0 +1,14 @@
+% vim: filetype=prolog
+
+lt(leaf,_).
+lt(node(_,Left,Y,Right),X) :- Y =< X, lt(Left,X), lt(Right,X).
+
+gt(leaf,_).
+gt(node(_,Left,Y,Right),X) :- Y >= X, gt(Left,X), gt(Right,X).
+
+sorted(leaf).
+sorted(node(_,Left,X,Right)) :- lt(Left,X), gt(Right,X), sorted(Left), sorted(Right).
+
+colorPath(leaf,[black]).
+colorPath(node(Color,Left,_,_), [Color|L]) :- colorPath(Left,L).
+colorPath(node(Color,_,_,Right), [Color|R]) :- colorPath(Right,R).
